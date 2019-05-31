@@ -271,19 +271,19 @@ function Game()
 		if (this.debug.show_obj)
 		{
 			this.viewport_ctx.fillStyle = 'rgba(0, 0, 255, 0.3)';
-			var start_x = parseInt(this.viewport_x/24), start_y = parseInt(this.viewport_y/24);
-			for (var x=0; x<20; ++x)
+			var start_x = parseInt(this.viewport_x/CELL_SIZE), start_y = parseInt(this.viewport_y/CELL_SIZE);
+			for (var x=0; x<CELLS_WIDTH; ++x)
 			{
 				if (CurrentLevel.map_cells[start_x+x] === undefined)
 					continue;
 				
-				for (var y=0; y<20; ++y)
+				for (var y=0; y<CELLS_HEIGTH; ++y)
 				{
 					if (CurrentLevel.map_cells[start_x+x][start_y+y] === undefined)
 						continue;
 					
 					if (MapCell.getSingleUserId(CurrentLevel.map_cells[start_x+x][start_y+y]) != -1)
-						this.viewport_ctx.fillRect((start_x+x)*24-this.viewport_x + 12, (start_y+y)*24-this.viewport_y + 12, 24, 24);
+						this.viewport_ctx.fillRect((start_x+x)*CELL_SIZE-this.viewport_x + CELL_SIZE/2, (start_y+y)*CELL_SIZE-this.viewport_y + CELL_SIZE/2, CELL_SIZE, CELL_SIZE);
 				}
 			}
 		}
@@ -291,13 +291,13 @@ function Game()
 		//DEBUG: Ground type
 		if (this.debug.show_type)
 		{
-			var start_x = parseInt((this.viewport_x-12)/24), start_y = parseInt((this.viewport_y-12)/24), skip;
-			for (var x=0; x<20; ++x)
+			var start_x = parseInt((this.viewport_x-CELL_SIZE/2)/CELL_SIZE), start_y = parseInt((this.viewport_y-CELL_SIZE/2)/CELL_SIZE/2), skip;
+			for (var x=0; x<CELLS_WIDTH; ++x)
 			{
 				if (CurrentLevel.map_cells[start_x+x] === undefined)
 					continue;
 				
-				for (var y=0; y<20; ++y)
+				for (var y=0; y<CELLS_HEIGTH; ++y)
 				{
 					if (CurrentLevel.map_cells[start_x+x][start_y+y] === undefined)
 						continue;
@@ -322,7 +322,7 @@ function Game()
 							break;
 					}
 					if (!skip)
-						this.viewport_ctx.fillRect((start_x+x)*24-this.viewport_x + 12, (start_y+y)*24-this.viewport_y + 12, 24, 24);
+						this.viewport_ctx.fillRect((start_x+x)*CELL_SIZE-this.viewport_x + CELL_SIZE/2, (start_y+y)*CELL_SIZE-this.viewport_y + CELL_SIZE/2, CELL_SIZE, CELL_SIZE);
 				}
 			}
 		}
@@ -332,17 +332,17 @@ function Game()
 		{
 			this.viewport_ctx.strokeStyle = '#ffffff';
 			this.viewport_ctx.beginPath();
-			var start = 24 - (this.viewport_x - parseInt(this.viewport_x/24)*24) - 11.5; 
-			for (var i=0; i<20; ++i)
+			var start = CELL_SIZE - (this.viewport_x - parseInt(this.viewport_x/CELL_SIZE)*CELL_SIZE) - 11.5; 
+			for (var i=0; i<CELLS_WIDTH; ++i)
 			{
-				this.viewport_ctx.moveTo(start + i*24, 0);
-				this.viewport_ctx.lineTo(start + i*24, 448);
+				this.viewport_ctx.moveTo(start + i*CELL_SIZE, 0);
+				this.viewport_ctx.lineTo(start + i*CELL_SIZE, VIEWPORT_SIZE);
 			}
-			start = 24 - (this.viewport_y - parseInt(this.viewport_y/24)*24) - 11.5; 
-			for (i=0; i<20; ++i)
+			start = CELL_SIZE - (this.viewport_y - parseInt(this.viewport_y/CELL_SIZE)*CELL_SIZE) - 11.5; 
+			for (i=0; i<CELLS_WIDTH; ++i)
 			{
-				this.viewport_ctx.moveTo(0, start + i*24);
-				this.viewport_ctx.lineTo(448, start + i*24);
+				this.viewport_ctx.moveTo(0, start + i*CELL_SIZE);
+				this.viewport_ctx.lineTo(VIEWPORT_SIZE, start + i*CELL_SIZE);
 			}
 			this.viewport_ctx.stroke();
 		}

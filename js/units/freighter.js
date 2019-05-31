@@ -68,7 +68,7 @@ function FreighterUnit(pos_x, pos_y, player)
 		
 		var top_x = this.position.x - game.viewport_x - 1 - this._proto.parts[0].hotspots[this.parts[0].direction][0].x, 
 			top_y = this.position.y - game.viewport_y + 5 - this._proto.parts[0].hotspots[this.parts[0].direction][0].y,
-			bar_height = this._proto.parts[0].image_size.y - 12,
+			bar_height = this._proto.parts[0].image_size.y - CELL_SIZE/2,
 			bar_size = Math.floor((this._res_now/this._res_max)*bar_height);
 			
 			

@@ -283,8 +283,8 @@ var MousePointer = {
 	getCellPosition: function()
 	{
 		return {
-			x: Math.floor((this.position.x + game.viewport_x - 12)/CELL_SIZE),
-			y: Math.floor((this.position.y + game.viewport_y - 12)/CELL_SIZE)
+			x: Math.floor((this.position.x + game.viewport_x - CELL_SIZE/2)/CELL_SIZE),
+			y: Math.floor((this.position.y + game.viewport_y - CELL_SIZE/2)/CELL_SIZE)
 		};
 	},
 		
@@ -457,7 +457,7 @@ var MousePointer = {
 		var target, unitid = MapCell.getSingleUserId(CurrentLevel.map_cells[pos.x][pos.y]);
 
 		if (unitid == -1)
-			target = {type: 'ground', x: pos.x*CELL_SIZE + 12, y: pos.y*CELL_SIZE + 12};
+			target = {type: 'ground', x: pos.x*CELL_SIZE + CELL_SIZE/2, y: pos.y*CELL_SIZE + CELL_SIZE/2};
 		else
 			target = {type: 'object', objid: unitid};
 

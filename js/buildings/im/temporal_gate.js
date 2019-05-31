@@ -49,8 +49,8 @@ function TemporalGateBuilding(pos_x, pos_y, player)
 				CurrentLevel.map_cells[pos.x][pos.y].ground_unit = unit.uid;
 				SimpleEffect.quickCreate('electric_blue_animation', {
 					pos: {
-						x: unit.position.x + 12,
-						y: unit.position.y + 12
+						x: unit.position.x + CELL_SIZE/2,
+						y: unit.position.y + CELL_SIZE/2
 					}
 				});
 				this._carry_spaces++;

@@ -67,7 +67,7 @@ function MapEditor()
 	
 	this.clicked = function(x, y)
 	{
-		var cell_x = Math.floor((x - 12) / CELL_SIZE), cell_y = Math.floor((y - 12) / CELL_SIZE);
+		var cell_x = Math.floor((x - CELL_SIZE/2) / CELL_SIZE), cell_y = Math.floor((y - CELL_SIZE/2) / CELL_SIZE);
 		
 		if (cell_x<0 || cell_y<0 || cell_x>=CurrentLevel.size.x-1 || cell_y>=CurrentLevel.size.y-1)
 			return;

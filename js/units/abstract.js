@@ -391,8 +391,8 @@ function AbstractUnit(pos_x, pos_y, player)
 			this.onStopMoving();
 			return;
 		}
-		var next_cell = this.move_path[0], x_movement = 0, y_movement = 0, next_x = next_cell.x * CELL_SIZE + 12, 
-			next_y = next_cell.y * CELL_SIZE + 12, change;
+		var next_cell = this.move_path[0], x_movement = 0, y_movement = 0, next_x = next_cell.x * CELL_SIZE + CELL_SIZE/2, 
+			next_y = next_cell.y * CELL_SIZE + CELL_SIZE/2, change;
 
 		if (next_x != this.position.x)
 		{

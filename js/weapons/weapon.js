@@ -44,8 +44,8 @@ function WeaponHolder(config_name)
 		else
 		{
 			position = {
-				x: unit.position.x + 12,
-				y: unit.position.y + 12
+				x: unit.position.x + CELL_SIZE/2,
+				y: unit.position.y + CELL_SIZE/2
 			};
 		}
 	};
@@ -117,8 +117,8 @@ function WeaponHolder(config_name)
 		}
 		
 		return {
-			x: pos.x + 12,
-			y: pos.y + 12
+			x: pos.x + CELL_SIZE/2,
+			y: pos.y + CELL_SIZE/2
 		};
 	};
 	

@@ -233,8 +233,8 @@ var DamageTable = {
 				
 				//Calculate damage coefficient
 				pixel_pos = MapCell.cellToPixel({x: x, y: y});
-				pixel_pos.x += 12;
-				pixel_pos.y += 12;
+				pixel_pos.x += CELL_SIZE/2;
+				pixel_pos.y += CELL_SIZE/2;
 				damage_proc = (1 - Math.min(1, MapCell.getPixelDistance(pixel_pos.x, pixel_pos.y, position.x, position.y) / offence.area_effect)) / 2 + 0.5;
 				
 				//Get objects

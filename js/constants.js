@@ -7,6 +7,9 @@ var GAMECONFIG = {
 	fog: true
 };
 
+var CELLS_WIDTH = 20;
+var CELLS_HEIGTH = 20;
+
 var CELL_SIZE = 24;
 var VIEWPORT_SIZE = 448;
 

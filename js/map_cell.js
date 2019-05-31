@@ -91,14 +91,14 @@ MapCell.getPixelDistance = function(x1, y1, x2, y2)
 MapCell.pixelToCell = function(pixel_pos)
 {
 	return {
-		x: Math.floor((pixel_pos.x - 12) / CELL_SIZE),
-		y: Math.floor((pixel_pos.y - 12) / CELL_SIZE)
+		x: Math.floor((pixel_pos.x - CELL_SIZE/2) / CELL_SIZE),
+		y: Math.floor((pixel_pos.y - CELL_SIZE/2) / CELL_SIZE)
 	};
 };
 
 MapCell.cellToPixel = function(cell_pos)
 {
-	return {x: cell_pos.x*CELL_SIZE + 12, y: cell_pos.y*CELL_SIZE + 12};
+	return {x: cell_pos.x*CELL_SIZE + CELL_SIZE/2, y: cell_pos.y*CELL_SIZE + CELL_SIZE/2};
 };
 
 MapCell.isFogged = function(pos)

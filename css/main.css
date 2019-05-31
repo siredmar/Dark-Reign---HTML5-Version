@@ -4,6 +4,13 @@ body {
 	cursor: url("../images/icursor.png"), auto;
 }
 
+:root {
+  --root-height: 480;
+  --root-width: 1024px;
+  --root-game-area-width: 736px;
+  --root-game-area-heigth: 480;
+}
+
 ::selection {
 	color: #000;
 }
@@ -14,8 +21,8 @@ body {
 
 .load-screen {
 	margin: 0;
-	width: 640px;
-	height: 480px;
+	width: var(--root-height);
+	height: var(--root-width);
 	background: url("../images/interface/load-screen.png") no-repeat 0 0;
 }
 .load-screen .progress {
@@ -148,7 +155,7 @@ body {
 }
 .shell-menu #level_select {
 	background: url("../images/shell/level_select.png") no-repeat 0 0;
-	height: 480px;
+	height:var(--root-width);
 	display: none;
 }
 .shell-menu #level_select .ring {
@@ -182,13 +189,13 @@ body {
 	position: absolute;
 	left: 0;
 	top: 0;
-	width: 640px;
-	height: 480px;
+	width: var(--root-height);
+	height: var(--root-width);
 	z-index: 999;
 }
 .shell-menu #archive {
 	background: url("../images/shell/archive.png") no-repeat 0 0;
-	height: 480px;
+	height: var(--root-width);
 	display: none;
 }
 .shell-menu #archive #archive_content {
@@ -237,7 +244,7 @@ body {
 }
 .shell-menu #objective {
 	background: url("../images/shell/objective.png") no-repeat 0 0;
-	height: 480px;
+	height: var(--root-width);
 	display: none;
 }
 .shell-menu #objective .link-obj {
@@ -302,7 +309,7 @@ body {
 }
 
 .shell-menu #launch {
-	height: 480px;
+	height: var(--root-width);
 	display: none;
 }
 .shell-menu #launch.fg {
@@ -419,14 +426,14 @@ body {
 
 
 .game {
-	width: 640px;
-	height: 480px;
+	width: var(root-heigh--root-height);
+	height: var(root-heigh--root-width);
 	display: none;
 }
 .game .left-frame {
 	float: left;
-	width: 448px;
-	height: 480px;
+	width: var(--root-game-area-heigth);
+	height: var(root-heigh--root-width);
 }
 .game .left-frame .top-panel {
 	height: 32px;
@@ -550,13 +557,13 @@ body {
 	background-position: -111px 0;
 }
 .game .left-frame .game-area {
-	width: 448px;
-	height: 448px;
+	width: var(--root-game-area-width);
+	height: var(--root-game-area-heigth);
 	background: #000;
 }
 .game .left-frame .game-area .view {
-	width: 448px;
-	height: 448px;
+	width: var(--root-game-area-width);
+	height: var(--root-game-area-heigth);
 	position: absolute;
 	overflow: hidden;
 }
@@ -571,9 +578,9 @@ body {
 	cursor: none;
 }
 .game .right-frame {
-	float: left;
+	float: right;
 	width: 192px;
-	height: 480px;
+	height: var(--root-game-area-heigth);
 }
 .game .right-frame .tab-buttons {
 	width: 192px;
@@ -625,7 +632,7 @@ body {
 	background-position: -384px 0;
 }
 .game .right-frame .tab-buttons .tab.comms.active {
-	background-position: -448px 0;
+	background-position: -var(--root-game-area-heigth) 0;
 }
 .game .right-frame .tab-buttons .tab.menu.active {
 	background-position: -512px 0;
@@ -634,7 +641,7 @@ body {
 	background-position: -384px -32px;
 }
 .game .right-frame .tab-buttons .tab.paths.active {
-	background-position: -448px -32px;
+	background-position: -var(--root-game-area-heigth) -32px;
 }
 .game .right-frame .tab-buttons .tab.special.active {
 	background-position: -512px -32px;
@@ -985,8 +992,8 @@ body {
 	top: 0;
 	left: 0;
 	display: none;
-	width: 640px;
-	height: 480px;
+	width: var(--root-height);
+	height: var(--root-width);
 }
 .dialog-screen .simple {
 	background: url("../images/dialog/simple_form.png") no-repeat;

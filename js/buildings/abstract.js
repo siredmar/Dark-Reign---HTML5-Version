@@ -744,15 +744,15 @@ AbstractBuilding.drawBuildMouse = function(obj, x, y)
 	MousePointer.mouse_ctx.drawImage(
 		game.resources.get(obj.res_key + color_type), 0, obj.images.normal.size.y, 
 		obj.images.normal.size.x, obj.images.normal.size.y, 
-		x*CELL_SIZE - game.viewport_x - obj.images.normal.padding.x + 12, 
-		y*CELL_SIZE - game.viewport_y - obj.images.normal.padding.y + 12, 
+		x*CELL_SIZE - game.viewport_x - obj.images.normal.padding.x + CELL_SIZE/2, 
+		y*CELL_SIZE - game.viewport_y - obj.images.normal.padding.y + CELL_SIZE/2, 
 		obj.images.normal.size.x, obj.images.normal.size.y
 	);
 	MousePointer.mouse_ctx.drawImage(
 		game.resources.get(obj.res_key + color_type), obj.images.normal.size.x, obj.images.normal.size.y, 
 		obj.images.normal.size.x, obj.images.normal.size.y, 
-		x*CELL_SIZE - game.viewport_x - obj.images.normal.padding.x + 12, 
-		y*CELL_SIZE - game.viewport_y - obj.images.normal.padding.y + 12, 
+		x*CELL_SIZE - game.viewport_x - obj.images.normal.padding.x + CELL_SIZE/2, 
+		y*CELL_SIZE - game.viewport_y - obj.images.normal.padding.y + CELL_SIZE/2, 
 		obj.images.normal.size.x, obj.images.normal.size.y
 	);
 		
@@ -778,7 +778,7 @@ AbstractBuilding.drawBuildMouse = function(obj, x, y)
 			var cell = CurrentLevel.map_cells[xxx][yyy], unitid = MapCell.getSingleUserId(cell);
 			if (cell.type!=CELL_TYPE_EMPTY || cell.shroud==1 || (unitid!=-1 && unitid!=game.action_state_options.requested_unit))
 			{
-				MousePointer.mouse_ctx.fillRect(xxx*CELL_SIZE - game.viewport_x + 12, yyy*CELL_SIZE - game.viewport_y + 12, CELL_SIZE, CELL_SIZE);
+				MousePointer.mouse_ctx.fillRect(xxx*CELL_SIZE - game.viewport_x + CELL_SIZE/2, yyy*CELL_SIZE - game.viewport_y + CELL_SIZE/2, CELL_SIZE, CELL_SIZE);
 			}
 		}
 	}
